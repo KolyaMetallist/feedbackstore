@@ -34,7 +34,7 @@
                 <modifiers read="true" write="true" search="true" partof="true" />
             </sourceElement>
             <targetElement type="Customer" qualifier="customer" cardinality="one">
-                <modifiers read="true" write="true" search="true" optional="false"/>
+                <modifiers read="true" write="true" search="true" initial="true" optional="false"/>
             </targetElement>
         </relation>
     </relations>
@@ -121,6 +121,13 @@
                     jaloclass="com.nabazhenov.feedbackstore.core.jalo.CustomerFeedbackReview">
                 <deployment table="customer_feedback_review" typecode="10300"/>
                 <attributes>
+                    <attribute qualifier="code" type="java.lang.String">
+                        <description>
+                            Unique field code
+                        </description>
+                        <modifiers unique="true" optional="false" initial="true"/>
+                        <persistence type="property" />
+                    </attribute>
                     <attribute type="java.lang.String" qualifier="headline">
                         <description>
                             Headline for the customer review
@@ -176,6 +183,11 @@
                         <description>It holds the information about language that review was written with.</description>
                     </attribute>
                 </attributes>
+                <indexes>
+                    <index name="customer_feedback_review_index">
+                        <key attribute="code" />
+                    </index>
+                </indexes>
             </itemtype>
         </typegroup>
 
