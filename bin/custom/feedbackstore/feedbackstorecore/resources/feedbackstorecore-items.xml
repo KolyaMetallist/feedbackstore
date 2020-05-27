@@ -27,6 +27,18 @@
         </enumtype>
     </enumtypes>
 
+    <relations>
+        <relation code="CustomerFeedbackReview2CustomerRelation" localized="false" autocreate="true">
+            <description>This relation links CustomerFeedbackReview to Customer element</description>
+            <sourceElement type="CustomerFeedbackReview" qualifier="customerFeedbackReviews" cardinality="many">
+                <modifiers read="true" write="true" search="true" partof="true" />
+            </sourceElement>
+            <targetElement type="Customer" qualifier="customer" cardinality="one">
+                <modifiers read="true" write="true" search="true" optional="false"/>
+            </targetElement>
+        </relation>
+    </relations>
+
     <itemtypes>
 
         <!-- Add your item definitions here -->
@@ -99,6 +111,69 @@
                         <description>Color of the product.</description>
                         <modifiers/>
                         <persistence type="property"/>
+                    </attribute>
+                </attributes>
+            </itemtype>
+        </typegroup>
+
+        <typegroup name="Review">
+            <itemtype code="CustomerFeedbackReview" autocreate="true" generate="true"
+                    jaloclass="com.nabazhenov.feedbackstore.core.jalo.CustomerFeedbackReview">
+                <deployment table="customer_feedback_review" typecode="10300"/>
+                <attributes>
+                    <attribute type="java.lang.String" qualifier="headline">
+                        <description>
+                            Headline for the customer review
+                        </description>
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute type="java.lang.String" qualifier="comment">
+                        <description>
+                            Comment for the customer review
+                        </description>
+                        <persistence type="property">
+                            <columntype database="oracle">
+                                <value>CLOB</value>
+                            </columntype>
+                            <columntype database="sap">
+                                <value>NCLOB</value>
+                            </columntype>
+                            <columntype>
+                                <value>HYBRIS.LONG_STRING</value>
+                            </columntype>
+                        </persistence>
+                    </attribute>
+                    <attribute type="java.lang.Double" qualifier="rating">
+                        <description>
+                            The rating, between customerreview.minimalrating (lowest rating) and
+                            customerreview.maximalrating (highest rating)
+                        </description>
+                        <modifiers initial="true" optional="false" />
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute type="java.lang.Boolean" qualifier="blocked">
+                        <description>
+                            This attribute can be set to true to indicate,
+                            that the review should be blocked, eg when it is
+                            offensive.
+                        </description>
+                        <modifiers optional="false" />
+                        <defaultvalue>java.lang.Boolean.FALSE</defaultvalue>
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="alias" type="java.lang.String">
+                        <persistence type="property" />
+                        <description>It holds the alias of the customer who wrote the review.</description>
+                    </attribute>
+                    <attribute qualifier="approvalStatus" type="CustomerReviewApprovalType">
+                        <persistence type="property" />
+                        <modifiers optional="false" />
+                        <defaultvalue>em().getEnumerationValue("CustomerReviewApprovalType","pending")</defaultvalue>
+                        <description>Its a review status type - when review is approved it is visible in the frontend.</description>
+                    </attribute>
+                    <attribute qualifier="language" type="Language">
+                        <persistence type="property" />
+                        <description>It holds the information about language that review was written with.</description>
                     </attribute>
                 </attributes>
             </itemtype>
