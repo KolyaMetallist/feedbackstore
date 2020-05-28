@@ -12,9 +12,9 @@
     <extension name='yacceleratorcore' />
     <extension name='yacceleratorinitialdata' />
     <extension name='yacceleratorfulfilmentprocess' />
-    <extension name='yacceleratorstorefront' />-->
+    <extension name='yacceleratorstorefront' />
     <extension name='ycommercewebservices' />
-    <extension name='ycommercewebservicestest' />
+    <extension name='ycommercewebservicestest' />-->
     <extension name='electronicsstore' />
     <extension name='apparelstore' />
     <extension name='spartacussampledataaddon' />
@@ -103,5 +103,7 @@
     <extension name='feedbackstoreinitialdata' />
     <extension name='feedbackstorebackoffice' />
     <extension name='feedbackstorestorefront' />
+    <extension name="feedbackstorecommercewebservices" />
+    <extension name="feedbackstorecommercewebservicestest" />
   </extensions>
 </hybrisconfig>
