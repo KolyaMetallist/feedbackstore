@@ -118,7 +118,7 @@
 
 	<alias alias="orderCodeIdentificationStrategy" name="defaultOrderCodeIdentificationStrategy" />
 	<bean id="defaultOrderCodeIdentificationStrategy"
-		class="de.hybris.platform.ycommercewebservices.strategies.impl.DefaultOrderCodeIdentificationStrategy">
+		class="com.nabazhenov.strategies.impl.DefaultOrderCodeIdentificationStrategy">
 		<property name="idPattern" value="[0-9a-f]{40}|[0-9a-f-]{36}" />
 	</bean>
 
