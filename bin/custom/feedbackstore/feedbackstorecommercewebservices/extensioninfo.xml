@@ -9,165 +9,24 @@
  Information and shall use it only in accordance with the terms of the
  license agreement you entered into with SAP.
 --><extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
-                                                	
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     <extension abstractclassprefix="Generated" classprefix="Ycommercewebservices" name="feedbackstorecommercewebservices" usemaven="false">
-                                                                                                		
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         <requires-extension name="cmsoccaddon"/>
-                
         <requires-extension name="notificationoccaddon"/>
-                        
-        
         <requires-extension name="customerinterestsoccaddon"/>
-                                
-        
-        
         <requires-extension name="consignmenttrackingoccaddon"/>
-                                        
-        
-        
-        
         <requires-extension name="acceleratorwebservicesaddon"/>
-                                                
-        
-        
-        
-                                        
-        
-        
-        
-                                        
-        
-        
-        
-                                        
-        
-        
-        
-                                        
-        
-        
-        
-                                        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         <requires-extension name="commercefacades"/>
-
-
-
-
-
-
-
-
-
-
-
         <requires-extension name="commerceservices"/>
         <requires-extension name="commercewebservicescommons"/>
-                                                                                                	
-		
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        <requires-extension name="feedbackstorefacades"/>
+
         <coremodule generated="true" manager="de.hybris.platform.jalo.extension.GenericManager" packageroot="com.nabazhenov"/>
-                                                                                                		
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         <webmodule jspcompile="false" webroot="/rest"/>
-                                                                                                		
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-                                                                                        		
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
         <meta key="modulegen-name" value="commercewebservices"/>
-                                                                                                	
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     </extension>
-                                                
-
-
-
-
-
-
-
-
-
-
-
 </extensioninfo>

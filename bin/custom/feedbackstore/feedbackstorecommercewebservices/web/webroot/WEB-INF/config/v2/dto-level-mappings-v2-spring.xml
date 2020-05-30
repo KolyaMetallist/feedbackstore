@@ -1543,4 +1543,30 @@
         </property>
     </bean>
 
+    <bean parent="fieldSetLevelMapping" id="customerFeedbackReviewListWsDTOFieldSetLevelMapping">
+        <property name="dtoClass"
+                value="com.nabazhenov.dto.feedback.CustomerFeedbackReviewListWsDTO"/>
+        <property name="levelMapping">
+            <map>
+                <entry key="BASIC" value="customerFeedbackReviews"/>
+                <entry key="DEFAULT" value="customerFeedbackReviews(DEFAULT)"/>
+                <entry key="FULL" value="customerFeedbackReviews(FULL)"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean parent="fieldSetLevelMapping" id="customerFeedbackReviewDTOFieldSetLevelMapping">
+        <property name="dtoClass"
+                value="com.nabazhenov.dto.feedback.CustomerFeedbackReviewWsDTO"/>
+        <property name="levelMapping">
+            <map>
+                <entry key="BASIC" value="id,headline,customer,alias,rating,date,comment"/>
+                <entry key="DEFAULT"
+                        value="id,headline,customer(DEFAULT),alias,rating,date,comment"/>
+                <entry key="FULL"
+                        value="id,headline,customer(FULL),alias,rating,date,comment"/>
+            </map>
+        </property>
+    </bean>
+
 </beans>
