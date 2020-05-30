@@ -4,12 +4,28 @@
 -->
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
 
-	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
-		<property name="genders" type="java.util.List&lt;com.nabazhenov.feedbackstore.facades.product.data.GenderData>"/>
-	</bean>
+    <bean class="de.hybris.platform.commercefacades.product.data.ProductData">
+        <property name="genders" type="java.util.List&lt;com.nabazhenov.feedbackstore.facades.product.data.GenderData>"/>
+    </bean>
 
-	<bean class="com.nabazhenov.feedbackstore.facades.product.data.GenderData">
-		<property name="code" type="String"/>
-		<property name="name" type="String"/>
-	</bean>
+    <bean class="com.nabazhenov.feedbackstore.facades.product.data.GenderData">
+        <property name="code" type="String"/>
+        <property name="name" type="String"/>
+    </bean>
+
+    <bean class="com.nabazhenov.feedbackstore.facades.feedback.data.CustomerFeedbackReviewData">
+        <property name="id" type="String"/>
+        <property name="headline" type="String"/>
+        <property name="comment" type="String"/>
+        <property name="rating" type="Double"/>
+        <property name="date" type="java.util.Date"/>
+        <property name="alias" type="String"/>
+        <property name="customer" type="de.hybris.platform.commercefacades.user.data.CustomerData"/>
+    </bean>
+
+    <bean class="com.nabazhenov.feedbackstore.facades.feedback.data.CustomerFeedbackReviewDataList">
+        <property name="customerFeedbackReviews"
+                type="java.util.List&lt;com.nabazhenov.feedbackstore.facades.feedback.data.CustomerFeedbackReviewData>"/>
+    </bean>
+
 </beans>
