@@ -18,15 +18,14 @@ import de.hybris.platform.core.Registry;
 import de.hybris.platform.core.initialization.SystemSetupContext;
 import de.hybris.platform.core.initialization.SystemSetupParameter;
 import de.hybris.platform.util.Config;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Required;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Required;
 
 
 //@SystemSetup(extension = YcommercewebservicestestConstants.EXTENSIONNAME)
@@ -74,6 +73,7 @@ public class FeedbackstorecommercewebservicestestSetup extends AbstractSystemSet
 		getSampleDataImportService().execute(this, context, importData);
 		getSetupImpexService().importImpexFile("/feedbackstorecommercewebservicestest/import/sampledata/user-orders.impex", true, false);
 		getSetupImpexService().importImpexFile("/feedbackstorecommercewebservicestest/import/sampledata/paymentmodes.impex", true, false);
+		getSetupImpexService().importImpexFile("/feedbackstorecommercewebservicestest/import/sampledata/user-feedbacks.impex", true, false);
 
 		if (enableWsIntegrationTest)
 		{

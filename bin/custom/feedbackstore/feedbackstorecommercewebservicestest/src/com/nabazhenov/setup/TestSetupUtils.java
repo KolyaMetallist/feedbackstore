@@ -10,7 +10,7 @@
  */
 package com.nabazhenov.setup;
 
-import com.nabazhenov.constants.YcommercewebservicestestConstants;
+import com.nabazhenov.constants.YcommercewebservicesConstants;
 import de.hybris.platform.basecommerce.model.site.BaseSiteModel;
 import de.hybris.platform.catalog.jalo.CatalogManager;
 import de.hybris.platform.core.Initialization;
@@ -30,6 +30,8 @@ import de.hybris.platform.site.BaseSiteService;
 import de.hybris.platform.util.Config;
 import de.hybris.platform.util.Utilities;
 import de.hybris.platform.webservicescommons.testsupport.server.EmbeddedServerController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -37,15 +39,12 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.BiConsumer;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 
 @SuppressWarnings("deprecation")
 public class TestSetupUtils
 {
 	private static final String[] EXTENSIONS_TO_START = new String[]
-	{ YcommercewebservicestestConstants.EXTENSIONNAME, OAuth2Constants.EXTENSIONNAME };
+	{ YcommercewebservicesConstants.EXTENSIONNAME, OAuth2Constants.EXTENSIONNAME };
 
 	private static final Logger LOG = LoggerFactory.getLogger(TestSetupUtils.class);
 
