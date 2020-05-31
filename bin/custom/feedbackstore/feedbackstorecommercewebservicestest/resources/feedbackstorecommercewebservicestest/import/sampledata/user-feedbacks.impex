@@ -1,0 +1,3 @@
+INSERT_UPDATE CustomerFeedbackReview; code[unique=true]; rating; customer(uid)[unique=true]; headline        ; comment; approvalStatus(code)[default='approved']; language(isocode)[default='en']
+                                    ; 12345            ; 5     ; democustomer              ; Test headline 1 ; Test comment 1
+                                    ; 12346            ; 4     ; democustomer              ; Test headline 2 ; Test comment 2
